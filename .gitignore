@@ -28,3 +28,8 @@ testem.log
 
 #System Files
 .DS_Store
+
+# ignore temporary files
+*.swp
+*.swo
+
