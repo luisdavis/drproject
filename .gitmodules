@@ -1,3 +1,4 @@
 [submodule "admin-processes"]
 	path = admin-processes
 	url = git@github.com:PALMDEV/admin-processes.git
+	branch = master
