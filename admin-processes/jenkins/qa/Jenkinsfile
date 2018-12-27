@@ -1,15 +1,31 @@
 pipeline {
     agent any
 
+    parameters {
+        string(defaultValue: "branch-name", description: '', name: 'branchParam')
+    }
+
     stages {
         stage('Build') {
             steps {
+                // checkout scm
+                // git([url: 'git://example.com/amazing-project.git', branch: 'master'])
+                // sh 'git clone https://github.com/PALMDEV/drproject.git'
+                
+
                 echo 'Building..'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh '0'
+                
+            }
+        }
+        post {
+            failure {
+                ehco "error"
             }
         }
         stage('Deploy') {
@@ -18,4 +34,10 @@ pipeline {
             }
         }
     }
+    post {
+        failure {
+            mail to: 'team@example.com', subject: 'Pipeline failed', body: "${env.BUILD_URL}"
+        }
+    }
+
 }
