@@ -25,7 +25,7 @@ pipeline {
         
             post {
                 failure {
-                    ehco "error"
+                    echo "error"
                 }
             }
         }
