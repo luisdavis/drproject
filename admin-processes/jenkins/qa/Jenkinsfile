@@ -27,12 +27,12 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh '0'
+                // sh '0'
                 error('stop on test')
             }
             post {
                 failure {
-                    echo "error"
+                    // echo "error"
                     error('least')
 
                 }
