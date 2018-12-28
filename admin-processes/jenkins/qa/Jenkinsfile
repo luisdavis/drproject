@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // checkout scm
-                
+                // checkout scm  
                 // git([url: 'git://example.com/amazing-project.git', branch: 'master'])
                 // sh 'git clone https://github.com/PALMDEV/drproject.git'
                 echo 'Building..'
