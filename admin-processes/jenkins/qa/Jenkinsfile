@@ -12,6 +12,7 @@ pipeline {
                 // git([url: 'git://example.com/amazing-project.git', branch: 'master'])
                 // sh 'git clone https://github.com/PALMDEV/drproject.git'
                 echo 'Building..'
+                
                 setBuildStatus("In Progress","PENDING","Jenkins CI","${GIT_COMMIT}")
                 
             }
