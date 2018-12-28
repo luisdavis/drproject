@@ -25,7 +25,7 @@ pipeline {
                 // sh '0'
                 // error('stop on test')
 
-                setBuildStatus("Complete","SUCCESS","the real build","${GIT_COMMIT}")
+                // setBuildStatus("Complete","SUCCESS","the real build","${GIT_COMMIT}")
                 
 
             }
@@ -35,14 +35,6 @@ pipeline {
                     
             //         // error('least')
                     
-                    
-
-
-
-
-
-                    
-
             //     }
 
 
@@ -50,7 +42,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                setBuildStatus("Complete","FAILURE","the real build","${GIT_COMMIT}")
+                // setBuildStatus("Complete","FAILURE","the real build","${GIT_COMMIT}")
+                setBuildStatus("Complete","SUCCESS","the real build","${GIT_COMMIT}")
             }
         }
     }
