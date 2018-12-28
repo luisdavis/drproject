@@ -23,13 +23,6 @@ pipeline {
             steps {
                 echo 'Testing..'
                 // echo "${GITHUB_PR_NUMBER}" throws and error
-
-
-
-                
-                // sh '0'
-                // error('stop on test')
-                // setBuildStatus("Complete","SUCCESS","the real build","${GIT_COMMIT}")
                 
             }
             post {
