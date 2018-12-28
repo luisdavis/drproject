@@ -14,7 +14,7 @@ pipeline {
                 
                 echo 'Building..'
             
-                setBuildStatus("In Progress","PENDING","the real build","${gitCommit}")
+                setBuildStatus("In Progress","PENDING","the real build","${GIT_COMMIT}")
                 
                 
             }
@@ -24,7 +24,7 @@ pipeline {
                 echo 'Testing..'
                 // sh '0'
                 // error('stop on test')
-                setBuildStatus("Complete","SUCCESS","the real build","${gitCommit}")
+                setBuildStatus("Complete","SUCCESS","the real build","${GIT_COMMIT}")
                 
 
             }
@@ -44,7 +44,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                setBuildStatus("Complete","FAILURE","the real build","${gitCommit}")
+                setBuildStatus("Complete","FAILURE","the real build","${GIT_COMMIT}")
             }
         }
     }
