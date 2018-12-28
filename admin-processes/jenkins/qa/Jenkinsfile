@@ -14,6 +14,7 @@ pipeline {
                 echo 'Building..'
                 setBuildStatus("In Progress","PENDING","Jenkins CI","${GIT_COMMIT}")
                 
+                
             }
         }
         stage('Test') {
