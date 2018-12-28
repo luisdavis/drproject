@@ -60,7 +60,6 @@ pipeline {
             
             mail to: 'team@example.com', subject: 'Pipeline failed', body: "${env.BUILD_URL}"
         }
+        
     }
-
-
 }
