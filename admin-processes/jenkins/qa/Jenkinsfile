@@ -22,7 +22,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                echo '${GITHUB_PR_NUMBER}'
+                echo "${GITHUB_PR_NUMBER}"
+
+                
                 // sh '0'
                 // error('stop on test')
                 // setBuildStatus("Complete","SUCCESS","the real build","${GIT_COMMIT}")
