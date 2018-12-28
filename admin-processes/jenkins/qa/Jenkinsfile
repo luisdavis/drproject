@@ -33,11 +33,10 @@ pipeline {
             post {
                 failure {
                     // echo "error"
+                    
                     error('least')
-
                 }
             }
-            
         }
         stage('Deploy') {
             steps {
