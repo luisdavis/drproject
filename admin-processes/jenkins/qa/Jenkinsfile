@@ -11,10 +11,8 @@ pipeline {
                 // checkout scm
                 // git([url: 'git://example.com/amazing-project.git', branch: 'master'])
                 // sh 'git clone https://github.com/PALMDEV/drproject.git'
-                
                 echo 'Building..'
-            
-                setBuildStatus("In Progress","PENDING","the real build","${GIT_COMMIT}")
+                setBuildStatus("In Progress","PENDING","Jenkins CI","${GIT_COMMIT}")
                 
                 
             }
@@ -29,35 +27,32 @@ pipeline {
                 
 
             }
-            // post {
-            //     failure {
-            //         // echo "error"
-                    
-            //         // error('least')
-                    
-            //     }
+            post {
+                failure {
+                    echo "Test are failing"
+                    setBuildStatus("Test are failing","FAILURE","Jenkins CI","${GIT_COMMIT}")
+                    // error('least')
+                }    
+            }
 
 
         }
         stage('Deploy') {
+            when { branch "develop" }
             steps {
                 echo 'Deploying....'
-                // setBuildStatus("Complete","FAILURE","the real build","${GIT_COMMIT}")
-                setBuildStatus("Complete","SUCCESS","the real build","${GIT_COMMIT}")
             }
         }
     }
     post {
         success {
             echo "we dit it"
-            // setBuildStatus("In Progress","PENDING",jobContext,"${gitCommit}")
+            setBuildStatus("Complete","SUCCESS","Jenkins CI","${GIT_COMMIT}")
         }
         failure {
-            
-            mail to: 'team@example.com', subject: 'Pipeline failed', body: "${env.BUILD_URL}"
+            setBuildStatus("Complete","FAILURE","Jenkins CI","${GIT_COMMIT}")
+            // mail to: 'team@example.com', subject: 'Pipeline failed', body: "${env.BUILD_URL}"
         }
-
-
     }
 
 }
