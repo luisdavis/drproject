@@ -36,15 +36,15 @@ pipeline {
                 
 
             }
-            // post {
-            //     failure {
-            //         // echo "error"
+            post {
+                failure {
+                    // echo "error"
                     
-            //         // error('least')
+                    // error('least')
                     
 
-            //     }
-            // }
+                }
+            }
         }
         stage('Deploy') {
             steps {
