@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                echo "${GITHUB_PR_NUMBER}"
+                // echo "${GITHUB_PR_NUMBER}" throws and error
 
 
 
