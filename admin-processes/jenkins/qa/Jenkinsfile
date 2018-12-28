@@ -36,15 +36,15 @@ pipeline {
                 
 
             }
-            post {
-                failure {
-                    // echo "error"
+            // post {
+            //     failure {
+            //         // echo "error"
                     
-                    // error('least')
+            //         // error('least')
                     
 
-                }
-            }
+            //     }
+            // }
         }
         stage('Deploy') {
             steps {
@@ -53,6 +53,9 @@ pipeline {
         }
     }
     post {
+        success {
+            echo "we dit it"
+        }
         failure {
             
             mail to: 'team@example.com', subject: 'Pipeline failed', body: "${env.BUILD_URL}"
