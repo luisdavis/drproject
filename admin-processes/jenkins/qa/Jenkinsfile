@@ -51,6 +51,7 @@ pipeline {
     }
     post {
         failure {
+            
             mail to: 'team@example.com', subject: 'Pipeline failed', body: "${env.BUILD_URL}"
         }
     }
