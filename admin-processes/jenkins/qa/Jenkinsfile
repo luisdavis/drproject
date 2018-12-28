@@ -24,7 +24,7 @@ pipeline {
                 echo 'Testing..'
                 // sh '0'
                 // error('stop on test')
-                
+
                 setBuildStatus("Complete","SUCCESS","the real build","${GIT_COMMIT}")
                 
 
@@ -37,6 +37,7 @@ pipeline {
                     
 
             //     }
+
 
         }
         stage('Deploy') {
