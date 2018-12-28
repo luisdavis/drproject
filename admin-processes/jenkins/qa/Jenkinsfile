@@ -28,13 +28,13 @@ pipeline {
             steps {
                 echo 'Testing..'
                 // sh '0'
-                error('stop on test')
+                // error('stop on test')
             }
             post {
                 failure {
                     // echo "error"
                     
-                    error('least')
+                    // error('least')
                     
 
                 }
