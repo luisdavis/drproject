@@ -32,6 +32,7 @@ pipeline {
                 echo 'Testing..'
                 // sh '0'
                 // error('stop on test')
+                
             }
             post {
                 failure {
